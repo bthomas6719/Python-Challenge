@@ -45,3 +45,5 @@ with open(poll_data, newline = "") as csvfile:
     poll_result.append('Winner: ' + winner[0])
     poll_result.append('-------------------------')
     print('\n'.join((poll_result)))
+
+    
