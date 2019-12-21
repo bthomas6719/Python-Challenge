@@ -24,14 +24,15 @@ with open(poll_data, newline = "") as csvfile:
         candidates.append(row[2])
     totalVotes = len(candidates)
 
-    #find candidate names
+    #find candidate names and votes
     for name in (candidates):
         vote_count[name] += 1
     
     winner = tuple(vote_count.keys())
     names = tuple(vote_count.keys())
     votes = tuple(vote_count.values())
-
+    
+    #find vote results and print
     for value in votes:
         vote_percent.append((int(value)/totalVotes)*100)
     poll_result.append('Election Results')
@@ -39,6 +40,7 @@ with open(poll_data, newline = "") as csvfile:
     poll_result.append('Total Votes: ' + str(totalVotes))
     poll_result.append('-------------------------')
 
+    #find names and print
     for x in range(len(names)):
         poll_result.append(names[x] + ': ' + str(round(vote_percent[x],2)) + '00% ' + '(' + str(votes[x]) + ')')
     poll_result.append('-------------------------')
